@@ -60,7 +60,7 @@ public class ZeroLatticeValueVisitor extends AbstractValueVisitor<ZeroLattice> {
   }
 
   @Override
-  public ValueVisitor cloneVisitor() {
+  public ValueVisitor<ZeroLattice> cloneVisitor() {
     return new ZeroLatticeValueVisitor(variables);
   }
 
