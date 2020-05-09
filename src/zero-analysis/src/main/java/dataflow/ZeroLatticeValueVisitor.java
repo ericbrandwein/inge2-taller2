@@ -26,10 +26,10 @@ public class ZeroLatticeValueVisitor extends AbstractValueVisitor<ZeroLattice> {
   @Override
   public void visitDivExpression(ZeroLattice leftOperand, ZeroLattice rightOperand) {
     possibleDivisionByZero =
-    // Tener en cuenta que this.possibleDivisionByZero indica que hay una posible division.
-    throw new UnsupportedOperationException();
+            rightOperand == ZeroLattice.ZERO || rightOperand == ZeroLattice.MAYBE_ZERO;
+    resolvedValue = leftOperand.divideBy(rightOperand);
   }
-  
+
 
   @Override
   public void visitMulExpression(ZeroLattice leftOperand, ZeroLattice rightOperand) {
