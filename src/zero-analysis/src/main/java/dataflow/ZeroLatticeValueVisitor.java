@@ -1,9 +1,5 @@
 package dataflow;
 
-import static dataflow.abs.ZeroLattice.MAYBE_ZERO;
-import static dataflow.abs.ZeroLattice.NOT_ZERO;
-import static dataflow.abs.ZeroLattice.ZERO;
-
 import java.util.Map;
 
 import dataflow.abs.ZeroLattice;
@@ -41,7 +37,7 @@ public class ZeroLatticeValueVisitor extends AbstractValueVisitor<ZeroLattice> {
 
   @Override
   public void visitSubExpression(ZeroLattice leftOperand, ZeroLattice rightOperand) {
-    resolvedValue = leftOperand.substract(rightOperand);
+    resolvedValue = leftOperand.subtract(rightOperand);
   }
 
   @Override
