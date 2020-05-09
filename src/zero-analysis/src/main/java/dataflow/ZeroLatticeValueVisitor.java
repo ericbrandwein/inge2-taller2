@@ -30,7 +30,6 @@ public class ZeroLatticeValueVisitor extends AbstractValueVisitor<ZeroLattice> {
     resolvedValue = leftOperand.divideBy(rightOperand);
   }
 
-
   @Override
   public void visitMulExpression(ZeroLattice leftOperand, ZeroLattice rightOperand) {
     resolvedValue = leftOperand.multiplyBy(rightOperand);
@@ -48,8 +47,11 @@ public class ZeroLatticeValueVisitor extends AbstractValueVisitor<ZeroLattice> {
 
   @Override
   public void visitIntegerConstant(int value) {
-    // Tener en cuenta que this.resolvedValue contiene el valor abstracto que se quiere devolver.
-    throw new UnsupportedOperationException();
+    if (value == 0) {
+      resolvedValue = ZeroLattice.ZERO;
+    } else {
+      resolvedValue = ZeroLattice.NOT_ZERO;
+    }
   }
 
   @Override
