@@ -42,7 +42,7 @@ public class DivisionByZeroAnalysis extends ForwardFlowAnalysis<Unit, VariableTo
       ZeroLatticeValueVisitor visitor = new ZeroLatticeValueVisitor(in);
       ZeroLattice resolvedValue = visitor.visit(definition.getRightOp()).done();
 
-      if (visitor.getPossibleDivisionByZero()) {
+      if (visitor.isPossiblyDividingByZero()) {
         possibleDivisionByZero.put(unit, true);
       }
 

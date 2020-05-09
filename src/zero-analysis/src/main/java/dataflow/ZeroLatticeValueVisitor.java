@@ -25,6 +25,7 @@ public class ZeroLatticeValueVisitor extends AbstractValueVisitor<ZeroLattice> {
 
   @Override
   public void visitDivExpression(ZeroLattice leftOperand, ZeroLattice rightOperand) {
+    possibleDivisionByZero =
     // Tener en cuenta que this.possibleDivisionByZero indica que hay una posible division.
     throw new UnsupportedOperationException();
   }
@@ -61,7 +62,7 @@ public class ZeroLatticeValueVisitor extends AbstractValueVisitor<ZeroLattice> {
     return new ZeroLatticeValueVisitor(variables);
   }
 
-  public Boolean getPossibleDivisionByZero() {
+  public Boolean isPossiblyDividingByZero() {
     return possibleDivisionByZero;
   }
 }
