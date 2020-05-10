@@ -1,6 +1,7 @@
 package dataflow;
 
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.Set;
 
 import dataflow.abs.VariableToLatticeMap;
@@ -59,7 +60,7 @@ public class DivisionByZeroAnalysis extends ForwardFlowAnalysis<Unit, VariableTo
   }
 
   protected void merge(VariableToLatticeMap input1, VariableToLatticeMap input2, VariableToLatticeMap output) {
-    Set<String> allKeys = input1.keySet();
+    Set<String> allKeys = new HashSet<>(input1.keySet());
     allKeys.addAll(input2.keySet());
     allKeys.forEach((key) -> {
       ZeroLattice firstZeroLattice = input1.get(key);
