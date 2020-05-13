@@ -7,3 +7,4 @@ sootOutput/*
 *.iml
 *.DS_Store
 .idea/
+*.class
