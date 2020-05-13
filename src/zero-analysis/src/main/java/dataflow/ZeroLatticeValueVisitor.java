@@ -10,7 +10,7 @@ import soot.Local;
 public class ZeroLatticeValueVisitor extends AbstractValueVisitor<ZeroLattice> {
 
   private final Map<String, ZeroLattice> variables;
-  private ZeroLattice resolvedValue = ZeroLattice.BOTTOM;
+  private ZeroLattice resolvedValue = ZeroLattice.MAYBE_ZERO;
   private Boolean possibleDivisionByZero;
 
   public ZeroLatticeValueVisitor(Map<String, ZeroLattice> variables) {

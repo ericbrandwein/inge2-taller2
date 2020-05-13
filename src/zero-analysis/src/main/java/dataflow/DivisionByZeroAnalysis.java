@@ -22,12 +22,6 @@ public class DivisionByZeroAnalysis extends ForwardFlowAnalysis<Unit, VariableTo
 
   public DivisionByZeroAnalysis(UnitGraph graph) {
     super(graph);
-
-    // Starting variable to lattice map
-    for (Local local : graph.getBody().getLocals()) {
-      localsAsLattice.put(local.getName(), ZeroLattice.BOTTOM);
-    }
-
     doAnalysis();
   }
 
