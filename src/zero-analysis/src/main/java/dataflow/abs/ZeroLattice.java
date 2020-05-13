@@ -28,7 +28,7 @@ public enum ZeroLattice {
 
         @Override
         protected ZeroLattice addMaybeZero() {
-            return MAYBE_ZERO;
+            return BOTTOM;
         }
 
         @Override
@@ -73,7 +73,7 @@ public enum ZeroLattice {
 
         @Override
         protected ZeroLattice multiplyZero() {
-            return ZERO;
+            return BOTTOM;
         }
 
         @Override
@@ -275,7 +275,7 @@ public enum ZeroLattice {
 
         @Override
         protected ZeroLattice multiplyBottom() {
-            return ZERO;
+            return BOTTOM;
         }
 
         @Override
@@ -331,7 +331,7 @@ public enum ZeroLattice {
 
         @Override
         protected ZeroLattice addBottom() {
-            return MAYBE_ZERO;
+            return BOTTOM;
         }
 
         @Override
@@ -361,17 +361,17 @@ public enum ZeroLattice {
 
         @Override
         protected ZeroLattice divideNotZero() {
-            return BOTTOM;
+            return NOT_ZERO;
         }
 
         @Override
         protected ZeroLattice divideZero() {
-            return BOTTOM;
+            return ZERO;
         }
 
         @Override
         protected ZeroLattice divideMaybeZero() {
-            return BOTTOM;
+            return MAYBE_ZERO;
         }
 
         @Override
