@@ -214,7 +214,7 @@ public enum ZeroLattice {
 
         @Override
         public ZeroLattice supreme(ZeroLattice another) {
-            return another == BOTTOM ? this : another;
+            return another == BOTTOM || another == this ? this : MAYBE_ZERO;
         }
     },
     ZERO("zero") {
@@ -320,7 +320,7 @@ public enum ZeroLattice {
 
         @Override
         public ZeroLattice supreme(ZeroLattice another) {
-            return another == BOTTOM ? this : another;
+            return another == BOTTOM || another == this ? this : MAYBE_ZERO;
         }
     },
     MAYBE_ZERO("maybe-zero") {
