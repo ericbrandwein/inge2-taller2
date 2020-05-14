@@ -20,7 +20,7 @@ Esta conceptualización nos lleva a que los parámetros de una función tomarán
 
 Basándonos en esto, es claro que al encontrarnos con una división por una variable con valor ZERO o MAYBE_ZERO el analizador deberá mostrar una advertencia, pero, ¿debería mostrar una cuando se divide por una variable con valor BOTTOM? Si la respuesta es no, nos encontramos con que no estamos cumpliendo nuestro requerimiento de soundness como lo especificamos anteriormente, ya que en cualquier momento en el que haya una división por un parámetro no asignado tendremos una posible división por cero que no estaremos identificando, como en el siguiente ejemplo:
 
-```c++
+```java
 int ejemplo1(int x) {
     return 1 / x;
 }
@@ -28,7 +28,7 @@ int ejemplo1(int x) {
 
 Además, lleva a inconsistencias evitables entre programas equivalentes. En el siguiente ejemplo se ve que, convirtiendo la función `ejemplo1` a una equivalente, logramos que nuestro analizador reporte el error:
 
-```c++
+```java
 int ejemplo1b(int x) {
     x = x + 0;
     return 1 / x;
@@ -37,7 +37,7 @@ int ejemplo1b(int x) {
 
 Por lo tanto, nuestro analizador debe mostrar advertencias cuando se divide por BOTTOM. Pero esto lleva a otros problemas. Además de hacer que BOTTOM y MAYBE_ZERO tengan el mismo significado para nuestro analizador (los dos significan "esto puede ser cero"), nos lleva a casos como el siguiente:
 
-```c++
+```java
 int ejemplo2(int x, int y) {
     if (x == y) {
         x = 1
