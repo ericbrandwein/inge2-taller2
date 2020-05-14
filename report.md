@@ -40,7 +40,7 @@ Por lo tanto, nuestro analizador debe mostrar advertencias cuando se divide por 
 ```java
 int ejemplo2(int x, int y) {
     if (x == y) {
-        x = 1
+        x = 1;
     }
     return y / x;
 }
