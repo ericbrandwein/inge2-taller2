@@ -72,4 +72,10 @@ public class A {
         return 2 / x; // Debería haber warning
     }
      */
+
+    public int dividirDosValoresDistintosDeCeroPuedeResultarEnUnCero() {
+        int y = 1;
+        int x = y / 2;
+        return 2 / x; // Debería haber warning
+    }
 }

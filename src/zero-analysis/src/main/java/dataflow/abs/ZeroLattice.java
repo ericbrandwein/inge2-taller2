@@ -149,7 +149,7 @@ public enum ZeroLattice {
 
         @Override
         protected ZeroLattice divideNotZero() {
-            return NOT_ZERO;
+            return MAYBE_ZERO;
         }
 
         @Override
