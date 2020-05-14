@@ -62,7 +62,7 @@ public class A {
         return 2 / x; // Debería haber warning
     }
 
-    // Esto no compila porque java no te deja tener variables locales inicializadas.
+    // Esto no compila porque java no te deja tener variables locales no inicializadas.
     /*
     public int localMantieneSuPosibilidadDeSerCeroDespuesDeUnMerge() {
         int x;
